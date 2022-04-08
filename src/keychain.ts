@@ -21,8 +21,6 @@ export async function setNote(
       name,
       "-C",
       "note",
-    //   "-w",
-    //   dataSerialized,
       "-X", new TextDecoder().decode(hexEncode(new TextEncoder().encode(dataSerialized))),
     ],
   });
