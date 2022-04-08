@@ -44,7 +44,16 @@ To avoid RTF when manual adding credentials you can use this simple bash script 
 
 ```sh
 #!/bin/sh
-security add-generic-password -a $USER -s "$1" -C note -X $(pbpaste| xxd -p)
+notename="$1"
+if [ -z $notename ]; then
+echo ""
+    echo "$0: <name of note> [-U]"
+    echo "\tThe content of the clipboard will be used for the note body."
+    echo "\t-U: with this an update of an existing note will fail"
+    echo ""
+    exit 1
+fi
+security add-generic-password -a $USER -s "$1" $2 -C note -X "$(pbpaste| xxd -ps -c 0)"
 ```
 
 `pb2keychain.sh test66`
