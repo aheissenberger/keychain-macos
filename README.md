@@ -37,6 +37,19 @@ Find a Note with the name `name` in the macOS keychain. The data in the note is 
 Find a Note with the name `name` in the macOS keychain.
 Data pasted into the keychain App is allways saved as RTF data und needs to be converted back to a text only representation.
 
+## Tipps
+
+To avoid RTF when manual adding credentials you can use this simple bash script which will add the current content of the clippboard.
+
+
+```sh
+#!/bin/sh
+security add-generic-password -a $USER -s "$1" -C note -X $(pbpaste| xxd -p)
+```
+
+`pb2keychain.sh test66`
+
+> will only create a note if the note does not exist - use `-U` to overwrite!
 
 ## Authors
 
