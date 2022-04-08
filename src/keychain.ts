@@ -2,7 +2,7 @@ import {
   decode as hexDecode,
   encode as hexEncode,
 } from "https://deno.land/std@0.126.0/encoding/hex.ts";
-import { decode as base64Decode } from "https://deno.land/std/encoding/base64.ts";
+import { decode as base64Decode } from "https://deno.land/std@0.134.0/encoding/base64.ts";
 
 // security add-generic-password -a $USER -s keychain-macos-test-001 -C note -w "{key:1}"
 export async function setNote(
