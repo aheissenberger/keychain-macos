@@ -32,6 +32,7 @@ async function getNote(name: string) {
   const p = Deno.run({
     cmd: [
       "security",
+      "-q",
       "find-generic-password",
       "-C",
       "note",
@@ -52,12 +53,18 @@ export async function getNoteTXT(name: string) {
   return new TextDecoder().decode(out);
 }
 
+export async function getNoteHEX(name: string) {
+  const out = await getNote(name);
+  const outCleaned = out.filter((v) => v >= 48); // remove non hex characters like LF
+  const text = new TextDecoder().decode(hexDecode(outCleaned));
+  return text;
+}
+
 // security find-generic-password -C note -s keychain-macos-test-001 -w | xxd -r -p | xmllint --xpath "//dict/data/text()" - | base64 --decode | textutil -stdin -convert txt -stdout
 export async function getNoteRTF(name: string) {
   const te = new TextDecoder();
   const out = await getNote(name);
   const outCleaned = out.filter((v) => v >= 48); // remove non hex characters like LF
-  console.log(outCleaned);
   const xml = te.decode(hexDecode(outCleaned));
   const dataBase64 =
     xml.match(/<data>(?<data>[\sA-Za-z0-9]*)<\/data>/)?.groups?.data ?? "";
@@ -87,6 +94,7 @@ export async function deleteNote(name: string): Promise<void> {
   const p = Deno.run({
     cmd: [
       "security",
+      "-q",
       "delete-generic-password",
       "-C",
       "note",

@@ -1,1 +1,1 @@
-export { deleteNote, getNoteRTF, getNoteTXT, setNote } from "./keychain.ts";
+export { deleteNote, getNoteRTF, getNoteTXT,getNoteHEX, setNote } from "./keychain.ts";
