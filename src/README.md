@@ -17,5 +17,5 @@ const result = await getNoteTXT("keychain-macos-test");
 await deleteNote("keychain-macos-test");
 ```
 
-##Full Documentation##
+##Full Documentation
 https://github.com/aheissenberger/keychain-macos
