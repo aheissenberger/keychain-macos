@@ -8,13 +8,13 @@ await build({
   shims: {
     // see JS docs for overview and more options
     deno: true,
-    undici: true,
+    //undici: true,
   },
   package: {
     // package.json properties
     name: "keychain-macos",
     version: Deno.args[0],
-    description: "Access ichkoche API",
+    description: "create, manipulate macOS keychain notes entries",
     license: "MIT",
     repository: {
       type: "git",
@@ -27,5 +27,5 @@ await build({
 });
 
 // post build steps
-//Deno.copyFileSync("LICENSE", "npm/LICENSE");
-//Deno.copyFileSync("README.md", "npm/README.md");
+Deno.copyFileSync("LICENSE.txt", "npm/LICENSE.txt");
+Deno.copyFileSync("README.md", "npm/README.md");
