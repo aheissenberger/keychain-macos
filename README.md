@@ -88,9 +88,13 @@ security add-generic-password -a $USER -s "$1" $2 -C note -X "$(pbpaste| xxd -ps
 
 > will only create a note if the note does not exist - use `-U` to overwrite as existing note!
 
-## Build
+## Build for NPM
 
-`deno task npm:build <new version>`
+```sh
+deno task npm:build <new version>
+cd npm
+npm publish
+```
 
 ## Authors
 
@@ -103,7 +107,8 @@ security add-generic-password -a $USER -s "$1" $2 -C note -X "$(pbpaste| xxd -ps
 * 0.1.1
     * add Option `update` on `setNote()` to replace existing note
     * add Error handling
-
+* 0.1.2-0.1.6
+    * changes to publish on NPM
 ## License
 
 This project is licensed under the "bsd-2-clause" License - see the LICENSE.txt file for details
