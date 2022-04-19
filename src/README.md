@@ -7,7 +7,7 @@
 ## Usage
 
 ```js
-import { deleteNote, getNoteTXT, setNote } from 'https://deno.land/x/authlete_deno@v0.1.1/mod.ts';"
+import { deleteNote, getNoteTXT, setNote } from 'https://deno.land/x/keychain_macos/mod.ts';"
 
 await setNote({ name:"keychain-macos-test", data:{key: 1} });
 
