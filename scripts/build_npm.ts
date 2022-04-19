@@ -15,7 +15,7 @@ await build({
     name: "keychain-macos",
     version: Deno.args[0],
     description: "create, manipulate macOS keychain notes entries",
-    license: "MIT",
+    license: "bsd-2-clause",
     repository: {
       type: "git",
       url: "git+https://github.com/aheissenberger/keychain-macos.git",
