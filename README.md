@@ -6,9 +6,17 @@
 
 ## Usage
 
+**NPM**
 ```js
-import { deleteNote, getNoteTXT, setNote } from "https://raw.githubusercontent.com/aheissenberger/keychain-macos/master/src/keychain.ts"
+import { deleteNote, getNoteTXT, setNote } from "keychain-macos"
+```
 
+**Deno**
+```js
+import { deleteNote, getNoteTXT, setNote } from 'https://deno.land/x/keychain_macos/mod.ts';"
+```
+
+```js
 await setNote({ name:"keychain-macos-test", data:{key: 1} });
 
 const result = await getNoteTXT("keychain-macos-test");
