@@ -13,7 +13,7 @@ import { deleteNote, getNoteTXT, setNote } from "keychain-macos"
 
 **Deno**
 ```js
-import { deleteNote, getNoteTXT, setNote } from 'https://deno.land/x/keychain_macos/mod.ts';"
+import { deleteNote, getNoteTXT, setNote } from 'https://deno.land/x/keychain_macos/mod.ts'
 ```
 
 ```js
